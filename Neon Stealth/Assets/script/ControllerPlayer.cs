@@ -9,15 +9,21 @@ public class ControllerPlayer : MonoBehaviour
     public int gravScale;
     private Animator animator;
     private bool alive;
+    private bool started;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         alive = true;
+        started = false;
         speed = 5;
     }
 
-    public void kill() {alive = false;}
+    public void kill() {
+        alive = false;
+    }
+
+    public void StartUp() { started = true; }
 
     public bool GetAlive() { return alive; }
     private void OnCollisionEnter(Collision collision)
@@ -27,12 +33,12 @@ public class ControllerPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (alive) { 
+        if (alive && started) { 
 
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) { speed = 10; }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) { speed = 5; }
+            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)) { speed = 5; }
 
             Vector3 movement = new Vector3(-moveHorizontal, 0f, -moveVertical);
 

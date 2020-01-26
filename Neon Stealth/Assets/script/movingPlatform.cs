@@ -24,7 +24,6 @@ public class movingPlatform : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Enter");
         if (collision.gameObject.tag != "Player")
             movement = movement * -1;
         else
