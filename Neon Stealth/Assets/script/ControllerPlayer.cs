@@ -37,8 +37,16 @@ public class ControllerPlayer : MonoBehaviour
 
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) { speed = 10; }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)) { speed = 5; }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
+                speed = 10;
+
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)) {
+                speed = 5;
+                animator.SetBool("running", false);
+
+
+            }
 
             Vector3 movement = new Vector3(-moveHorizontal, 0f, -moveVertical);
 
@@ -52,11 +60,15 @@ public class ControllerPlayer : MonoBehaviour
                 if (speed == 10)
                 {
                     animator.SetBool("moving", true);
+                    animator.SetBool("running", true);
+
                 }
                 transform.forward = movement;
             }
             else {
                 animator.SetBool("moving", false);
+                animator.SetBool("running", false);
+
             }
         }
     }

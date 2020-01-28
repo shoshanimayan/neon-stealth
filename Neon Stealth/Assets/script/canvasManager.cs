@@ -30,12 +30,15 @@ public class canvasManager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-        if (startScreen.active) {
-            if (Input.anyKeyDown) {
+        if (startScreen.active)
+        {
+            if (Input.anyKeyDown)
+            {
                 startScreen.SetActive(false);
-                pc.StartUp();
             }
-
+        }
+        else {
+            pc.StartUp();
         }
     }
 }
