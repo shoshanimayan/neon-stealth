@@ -35,6 +35,16 @@ public class EnemyPath : MonoBehaviour
 
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "box" || collision.gameObject.tag == "yellow")
+        {
+
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -10,8 +10,15 @@ public class ControllerPlayer : MonoBehaviour
     private Animator animator;
     private bool alive;
     private bool started;
+    private bool finished;
+    private int ammo;
+
+    public GameObject shot;
+
     private void Start()
     {
+        finished = false;
+        ammo = 0;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         alive = true;
@@ -20,7 +27,22 @@ public class ControllerPlayer : MonoBehaviour
     }
 
     public void kill() {
-        alive = false;
+        if(!finished)
+            alive = false;
+    }
+
+    public void win() { finished = true; }
+    public void AddAmmo() { ammo++; }
+    private void shoot() {
+        ammo--;
+        Debug.Log("shoot");
+
+        Vector3 spawnPos=transform.position + transform.forward * .5f;
+        spawnPos = new Vector3(spawnPos.x, 2, spawnPos.z);
+        GameObject bulletClone=Instantiate(shot, spawnPos, transform.rotation);
+
+        bulletClone.transform.GetComponent<Rigidbody>().velocity = transform.forward * 12;
+
     }
 
     public void StartUp() { started = true; }
@@ -28,24 +50,24 @@ public class ControllerPlayer : MonoBehaviour
     public bool GetAlive() { return alive; }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "red") { kill(); }
+        if (collision.gameObject.tag == "red")
+            kill(); 
     }
 
     private void FixedUpdate()
     {
-        if (alive && started) { 
-
+        if (alive && started &&!finished) {
+            //shoot
+            if (Input.GetKeyDown(KeyCode.Space) && ammo > 0)
+                shoot();
+            //movment
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) 
                 speed = 10;
-
-            }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)) {
+            else  {
                 speed = 5;
                 animator.SetBool("running", false);
-
-
             }
 
             Vector3 movement = new Vector3(-moveHorizontal, 0f, -moveVertical);

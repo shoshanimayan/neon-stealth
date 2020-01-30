@@ -18,6 +18,19 @@ public class enemyRotater : MonoBehaviour
 
     }
 
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "box" || collision.gameObject.tag == "yellow") {
+
+            Destroy(gameObject);
+        }
+    }
+
+
+
+
     IEnumerator RotateMe(Vector3 byAngles, float inTime)
     {
         var fromAngle = transform.rotation;

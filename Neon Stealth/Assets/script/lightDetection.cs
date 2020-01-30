@@ -5,6 +5,7 @@ using UnityEngine;
 public class lightDetection : MonoBehaviour
 {
     // Start is called before the first frame update
+    public LayerMask viewM;
     void Start()
     {
         
@@ -19,9 +20,19 @@ public class lightDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<ControllerPlayer>().kill();
+        if (other.gameObject.tag == "Player")
+        {
 
+            RaycastHit hit;
+            if (!Physics.Linecast(other.transform.position, transform.position,out hit, viewM)) {
+                if (hit.transform.gameObject.tag == "Player") {
+                    hit.transform.gameObject.GetComponent<ControllerPlayer>().kill();
+                }
+              
+
+                Debug.Log("hit");
+            }
+            
         }
     }
 }
