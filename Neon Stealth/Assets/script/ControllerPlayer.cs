@@ -74,6 +74,7 @@ public class ControllerPlayer : MonoBehaviour
 
             if (movement != Vector3.zero)
             {
+
                 rb.velocity += movement*speed;
                 if (speed == 5)
                 {

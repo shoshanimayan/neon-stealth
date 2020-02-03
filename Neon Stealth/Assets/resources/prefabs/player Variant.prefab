@@ -41,8 +41,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b646f1255f63a4a0e9bc90398c565bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 917278694}
-  speed: 10
+  gravScale: 1
+  shot: {fileID: 5835477265773458466, guid: b9f9d8352a10b4966990a1bc451359e9, type: 3}
 --- !u!1001 &3975852979986609464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1224183932986168, guid: c3b5979cdf315164681df5c9d08153a4, type: 3}
       propertyPath: m_Name
-      value: player
+      value: player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1224183932986168, guid: c3b5979cdf315164681df5c9d08153a4, type: 3}
       propertyPath: m_TagString

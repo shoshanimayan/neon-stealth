@@ -6,15 +6,13 @@ public class lightDetection : MonoBehaviour
 {
     // Start is called before the first frame update
     public LayerMask viewM;
+    public float distance = 2.9f;
+    public int countHit = 2;
     void Start()
     {
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -23,21 +21,19 @@ public class lightDetection : MonoBehaviour
             raycastDir.Normalize();
             RaycastHit[] coverHits;
 
-            coverHits = Physics.RaycastAll(transform.position, raycastDir, 2.9f);
+            coverHits = Physics.RaycastAll(transform.position, raycastDir, distance);
 
-            if (coverHits.Length <= 2)
+            if (coverHits.Length <= countHit)
             {
                 other.gameObject.GetComponent<ControllerPlayer>().kill();
             }
-            if (coverHits.Length > 0)
-            {
+            if (coverHits.Length > 0) {
 
-                for (int i = 0; i < coverHits.Length; i++)
-                {
-                    Debug.Log(coverHits[i].transform.gameObject);
+                for (int i = 0; i < coverHits.Length; i++) {
+                    Debug.Log(coverHits[i].collider.name);
                 }
-
             }
+            
         }
     }
 
@@ -49,20 +45,21 @@ public class lightDetection : MonoBehaviour
             raycastDir.Normalize();
             RaycastHit[] coverHits;
 
-            coverHits = Physics.RaycastAll(transform.position, raycastDir, 2.9f);
+            coverHits = Physics.RaycastAll(transform.position, raycastDir, distance);
 
-            if (coverHits.Length <= 2)
+            if (coverHits.Length <= countHit)
             {
                 other.gameObject.GetComponent<ControllerPlayer>().kill();
             }
             if (coverHits.Length > 0)
             {
 
-                for (int i = 0; i < coverHits.Length; i++) {
-                    Debug.Log(coverHits[i].transform.gameObject);
+                for (int i = 0; i < coverHits.Length; i++)
+                {
+                    Debug.Log(coverHits[i].collider.name);
                 }
-
             }
+
         }
 
     }

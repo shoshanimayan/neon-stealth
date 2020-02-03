@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPath : MonoBehaviour
+public class EnemyPath : red
 {
 
     public enum TypeWalk { walk,run}
@@ -36,14 +36,7 @@ public class EnemyPath : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "box" || collision.gameObject.tag == "yellow")
-        {
-
-            Destroy(gameObject);
-        }
-    }
+ 
 
     // Update is called once per frame
     void Update()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyRotater : MonoBehaviour
+public class enemyRotater : red
 {
     public float TurnTime=3f;
     private float timer;
@@ -17,18 +17,6 @@ public class enemyRotater : MonoBehaviour
         animator = GetComponent<Animator>();
 
     }
-
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "box" || collision.gameObject.tag == "yellow") {
-
-            Destroy(gameObject);
-        }
-    }
-
-
 
 
     IEnumerator RotateMe(Vector3 byAngles, float inTime)

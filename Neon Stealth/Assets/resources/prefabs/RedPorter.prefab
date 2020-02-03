@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!122 &2678244492620468598
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158840708564330758}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280484088
+  m_Size: 0.5
+--- !u!114 &1318443715768715283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158840708564330758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90afa587f948466ebbfadc18f9eccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+--- !u!1001 &3918112508252135087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1146382735582640041, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_Name
+      value: RedPorter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.758
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.264383
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640085, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640086, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 65.57664
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640086, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 31.788319
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146382735582640087, guid: c27a158136e7e4524bf338fedfe80414,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1349fc53f05034fefb824ca671aecfa9, type: 2}
+    m_RemovedComponents:
+    - {fileID: 1146382735582640083, guid: c27a158136e7e4524bf338fedfe80414, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c27a158136e7e4524bf338fedfe80414, type: 3}
+--- !u!1 &4158840708564330758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1146382735582640041, guid: c27a158136e7e4524bf338fedfe80414,
+    type: 3}
+  m_PrefabInstance: {fileID: 3918112508252135087}
+  m_PrefabAsset: {fileID: 0}
